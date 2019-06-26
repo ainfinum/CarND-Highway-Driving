@@ -11,11 +11,12 @@ The successful navigation for more than 20 miles around the virtual highway is s
 <img src="./images/img1.jpg" width="800">
 
 # Reflection
-The main parts of the project code are Prediction, Behavior Planning, and Trajectory Calculation. This project uses the seed code provided by Udacity. The car is able to drive quite well on the highway more than 20 miles. However, unexpected and complicated situations may occur on the road. Unfortunately, it was hard to repeat such conditions and create more advanced algorithm. Behavior planner cannot manage complicated situations like other car collisions or uninspected lane changing by other cars. 
+The main parts of the project code are Prediction, Behavior Planning, and Trajectory Calculation. This project uses the seed code provided by Udacity. The car is able to drive quite well on the highway more than 20 miles. However, unexpected and complicated situations may occur on the road. Unfortunately, it was hard to repeat such conditions and create a more advanced algorithm. Behavior planner cannot manage complicated situations like other car collisions or uninspected lane changing by other cars. 
 
 
 ## Prediction
 The prediction module ( lines 111-155 of main.cpp ) using a matrix 3x3x2 to create a road snapshot. Each lane is divided into 3 segments by 30m and each segment keeps information of the car velocity and car s value. The road matrix is filled with corresponding values from sensor fusion data, so behavior planning module could see the road situation for 90m ahead for 3 lanes and plan the car behavior accordingly.
+3x3 matrix was used for simplicity. A bigger matrix with short segments ( like 5 m ) mapping road situation around the car could be used to create advanced behavior.
 
 <img src="./images/img2.jpg" width="800">
 
